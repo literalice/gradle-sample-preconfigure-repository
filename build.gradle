@@ -1,0 +1,12 @@
+configurations {
+    runtime
+}
+
+dependencies {
+    runtime name: "hoge-hoge", ext: "txt"
+}
+
+task showDependencies << {
+    configurations.runtime.each { File file -> println file.absolutePath }
+}
+
